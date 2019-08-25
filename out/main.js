@@ -81,19 +81,47 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./js/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./js/main.js":
+/*!********************!*\
+  !*** ./js/main.js ***!
+  \********************/
 /*! no exports provided */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/denis/Projects/FrontEndTestProject/src/index.js'");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _module_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module.js */ "./js/module.js");
+
+
+var hello = function hello(name) {
+  return console.log("hello ".concat(name));
+};
+
+hello('Denis'); //hello('world');
+
+Object(_module_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+/***/ }),
+
+/***/ "./js/module.js":
+/*!**********************!*\
+  !*** ./js/module.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var textConsole = function textConsole() {
+  console.log('From module text');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (textConsole);
 
 /***/ })
 
