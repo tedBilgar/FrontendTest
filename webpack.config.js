@@ -1,13 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: {
-    main: './js/main.js',
-    about: './js/about.new.js'
-  },
+  entry: path.join(__dirname, 'js', 'main.js'),
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'out')
@@ -23,6 +21,10 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -30,6 +32,13 @@ module.exports = {
      contentBase: './out'
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './index.html'})
-  ]
+    
+    new VueLoaderPlugin()
+  ],
+  resolve: {
+      modules: [
+          path.join(__dirname, 'js'),
+          path.join(__dirname, 'node_modules'),
+      ],
+  }
 }
